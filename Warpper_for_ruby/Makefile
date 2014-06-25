@@ -2,6 +2,10 @@ all: main.cpp Big_integer.cpp
 	g++ -c -fPIC Big_integer.cpp
 	g++ -shared -o libBig_integer.so Big_integer.o
 	LD_LIBRARY_PATH=./ g++ main.cpp -lBig_integer -I. -Wl,-rpath,. -L. -o long_ariph
+	swig -c++ -ruby Big_integer.i
+	gcc -fPIC Big_integer_wrap.c -I/usr/include/ruby-2.0.0
+	gcc -shared Big_integer_wrap.o -o Big_integer.so -lruby -L/usr/lib/ruby/2.0.0
+	
 	
 windows: main.cpp Big_integer.cpp
 	g++ -c Big_integer.cpp
