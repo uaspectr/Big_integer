@@ -1,2 +1,2 @@
 require 'mkmf'
-create_makefile("Big_integer")
+create_makefile('Big_integer')
