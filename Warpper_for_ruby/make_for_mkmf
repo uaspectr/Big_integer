@@ -1,3 +1,0 @@
-all:
-	ruby -r mkmf extconf.rb
-	make -f Makefile
