@@ -1,2 +1,2 @@
 # coding:utf-8
-require 'Big_integer'
+require './Big_integer'
