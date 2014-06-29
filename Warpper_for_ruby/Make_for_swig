@@ -1,9 +1,6 @@
 all:
+	swig -c++ -ruby Big_integer.i
 	ruby extconf.rb
 	make
 	make install
-	swig -c++ -ruby Big_integer.i
-	gcc -fPIC -c Big_integer.cpp
-	gcc -fPIC -c Big_integer_wrap.cxx -I/usr/include/ruby-1.9.1 -I/usr/include/ruby-1.9.1/x86_64-linux
-	gcc -shared Big_integer.o Big_integer_wrap.o -o Big_integer.so
 	rm *.o *.cxx
