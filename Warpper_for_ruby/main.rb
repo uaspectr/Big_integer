@@ -7,6 +7,11 @@ x = Big_integer::Big_integer.new()
 y = Big_integer::Big_integer.new()
 z = Big_integer::Big_integer.new()
 
+if ARGV.length()==1 and ARGV[0]=="--help"
+	puts usage
+	exit 0
+end
+
 if ARGV.length() < 4
 	puts "Error: so few arguments"
 	exit 1
